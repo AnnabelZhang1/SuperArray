@@ -6,13 +6,14 @@ public class SuperArray{
   //constructor
   public SuperArray()
     {
-      String[] superArray = new String[10];
+      data = new String[10];
+      size = 0;
     }
 
   //methods
   public int size()
     {
-      return
+      return size;
     }
 
   public boolean add(String element)
@@ -27,7 +28,12 @@ public class SuperArray{
 
   private void resize()
     {
-      
+      String[] newArr = new String[superArray.length + 10];
+      for (int i = 0; i < newArr.length; i++)
+        {
+          newArr[i] = superArray[i];
+        }
+      data = newArr;
     }
 
 }
