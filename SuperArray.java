@@ -25,9 +25,16 @@ public class SuperArray{
       return true;
     }
 
+  public String get(int index)
+    {
+      return data[index];
+    }
+
   public String set(int index, String element)
     {
-
+      if (data[index] != null)
+        data[index] = element;
+      return element;
     }
 
   private void resize()
