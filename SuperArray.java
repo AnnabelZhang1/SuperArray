@@ -47,4 +47,40 @@ public class SuperArray{
       data = newArr;
     }
 
+  //11-4-2020
+  public void clear()
+    {
+      size = 0;
+      data = null;
+    }
+
+  public boolean isEmpty()
+    {
+      return size == 0;
+    }
+
+  public String toString()
+    {
+      String n = "[" + data[0];
+      for (int i = 1; i < size; i++)
+        n += ", " + data[i];
+      n += "]";
+      return n;
+    }
+
+  public boolean contains(String s)
+    {
+      for (int i = 0; i < size; i++)
+        {
+          if (data[i].equals(s))
+            return true;
+        }
+      return false;
+    }
+/*
+  public SuperArray(int initialCapacity)
+    {
+
+    }
+*/
 }
