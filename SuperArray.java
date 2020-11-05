@@ -77,10 +77,41 @@ public class SuperArray{
         }
       return false;
     }
-/*
+
   public SuperArray(int initialCapacity)
     {
+      SuperArray n = newSuperArray[initialCapacity];
+    }
+/*
+  public void add(int index, String element)
+    {
+      for (int i = index; i < data.length; i++)
+        data[i+1] = data[i];
+      data[index] = element;
+    }
 
+  public String remove(int index)
+    {
+      for (int i = index; i < data.length; i++)
+        data[i] = data[i+1];
     }
 */
+  public int indexOf(String s)
+    {
+      for (int i = 0; i < size; i++)
+        {
+            if (data[i].equals(s))
+              return i;
+        }
+      return -1;
+    }
+
+  public String[] toArray()
+    {
+      String[] arr = new String[size];
+      for (int i = 0; i < size; i++)
+        arr[i] = data[i];
+      return n;
+    }
+
 }
