@@ -1,5 +1,3 @@
-//ty Philip von Mueffling
-
 public class SuperArray{
 
   private String[] data;
