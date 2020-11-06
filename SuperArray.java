@@ -47,7 +47,7 @@ public class SuperArray{
       data = newArr;
     }
 
-  //11-4-2020
+//11-4-2020
   public void clear()
     {
       size = 0;
@@ -137,4 +137,15 @@ public class SuperArray{
       return arr;
     }
 
+/*11-6-2020
+  public int lastIndexOf(String value)
+    {
+      for (int i = size; i < size; i--)
+    }
+
+  public boolean equals(SuperArray other)
+    {
+
+    }
+*/
 }
