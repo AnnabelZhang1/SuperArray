@@ -1,3 +1,5 @@
+//ty Philip von Mueffling
+
 public class SuperArray{
 
   private String[] data;
@@ -32,9 +34,9 @@ public class SuperArray{
 
   public String set(int index, String element)
     {
-      if (data[index] != null)
-        data[index] = element;
-      return element;
+      String n = data[index];
+      data[index] = element;
+      return n;
     }
 
   private void resize()
@@ -62,10 +64,13 @@ public class SuperArray{
   public String toString()
     {
       String n = "[" + data[0];
-      for (int i = 1; i < size; i++)
-        n += ", " + data[i];
-      n += "]";
-      return n;
+      if (size == 0)
+        return "[]";
+      else
+        for (int i = 1; i < size; i++)
+          n += ", " + data[i];
+          n += "]";
+        return n;
     }
 
   public boolean contains(String s)
@@ -80,22 +85,42 @@ public class SuperArray{
 
   public SuperArray(int initialCapacity)
     {
-      SuperArray n = newSuperArray[initialCapacity];
+      data = new String[initialCapacity];
+      size = 0;
     }
-/*
+
   public void add(int index, String element)
     {
-      for (int i = index; i < data.length; i++)
-        data[i+1] = data[i];
+      size += 1;
+      String first = data[index];
+      String second = "";
+      for (int i = index + 1; i < size; i++)
+        {
+          second = data[i];
+          data[i] = first;
+          first = second;
+        }
       data[index] = element;
+      data[size] = first;
     }
 
   public String remove(int index)
     {
-      for (int i = index; i < data.length; i++)
-        data[i] = data[i+1];
+      String item = data[index];
+      String replace = data[size-1];
+      String n = "";
+      data[size-1] = null;
+      for (int i = size - 2; i > index; i--)
+        {
+          n = data[i];
+          data[i] = replace;
+          replace = n;
+        }
+      data[index] = replace;
+      size -= 1;
+      return item;
     }
-*/
+
   public int indexOf(String s)
     {
       for (int i = 0; i < size; i++)
@@ -111,7 +136,7 @@ public class SuperArray{
       String[] arr = new String[size];
       for (int i = 0; i < size; i++)
         arr[i] = data[i];
-      return n;
+      return arr;
     }
 
 }
