@@ -60,10 +60,19 @@ public class Demo{
       b.add("0");           b.add("4");           b.add("2");           b.add("2");
       b.add("9");
 
+
+      SuperArray c = new SuperArray();
+
+      c.add("9");           c.add("1");           c.add("2");           c.add("2");
+      c.add("3");           c.add("4");
+
       System.out.println(findOverlap(a, b));
       //expected ["9","2","4"]
 
-     System.out.print(b.lastIndexOf("2"));
+     System.out.println(b.lastIndexOf("2"));
       //expected 3
+
+      System.out.println(a.equals(b));
+      System.out.println(a.equals(c));
     }
 }
