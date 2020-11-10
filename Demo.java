@@ -28,16 +28,6 @@ public class Demo{
       return overlap;
     }
 /*
-  public int lastIndexOf(String value)
-    {
-
-    }
-
-  public boolean equals(SuperArray other)
-    {
-
-    }
-
   public static SuperArray zip(SuperArray a, Superarray b)
     {
 
