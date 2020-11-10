@@ -63,7 +63,7 @@ public class Demo{
       System.out.println(findOverlap(a, b));
       //expected ["9","2","4"]
 
-//      System.out.print(lastIndexOf ebi);
-      //expected 10
+     System.out.print(b.lastIndexOf("2"));
+      //expected 3
     }
 }

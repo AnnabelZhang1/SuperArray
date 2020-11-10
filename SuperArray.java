@@ -137,12 +137,17 @@ public class SuperArray{
       return arr;
     }
 
-/*11-6-2020
+//11-6-2020
   public int lastIndexOf(String value)
     {
-      for (int i = size; i < size; i--)
+      for (int i = size()-1; i > 0; i--)
+        {
+          if (data[i].equals(value))
+            return i;
+        }
+      return -1;
     }
-
+/*
   public boolean equals(SuperArray other)
     {
 
