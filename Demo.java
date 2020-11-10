@@ -14,15 +14,33 @@ public class Demo{
             }
         }
     }
-/*
+
   public static SuperArray findOverlap(SuperArray a, SuperArray b)
     {
-      Superarray[] overlap = new SuperArray();
-      for (int i = 0; i < a.size(); i++)
+      SuperArray overlap = new SuperArray();
+      int greatest = Math.max(a.size(), b.size());
+      for (int i = 0; i < greatest; i++)
         {
-          if
+          if (b.contains(a.get(i)))
+            overlap.add(a.get(i));
         }
+      removeDuplicates(overlap);
       return overlap;
+    }
+/*
+  public int lastIndexOf(String value)
+    {
+
+    }
+
+  public boolean equals(SuperArray other)
+    {
+
+    }
+
+  public static SuperArray zip(SuperArray a, Superarray b)
+    {
+
     }
 */
   public static void main(String[] args)
@@ -42,8 +60,20 @@ public class Demo{
       [kani, uni, ebi, una, una, ebi, kani, una, una, ebi, toro]
       [kani, uni, ebi, una, toro]
       */
+      SuperArray a = new SuperArray();
 
-//      System.out.println(findOverlap( ["9","1","2","2","3","4"], ["0","4","2","2","9"] ));
+      a.add("9");           a.add("1");           a.add("2");           a.add("2");
+      a.add("3");           a.add("4");
+
+      SuperArray b = new SuperArray();
+
+      b.add("0");           b.add("4");           b.add("2");           b.add("2");
+      b.add("9");
+
+      System.out.println(findOverlap(a, b));
       //expected ["9","2","4"]
+
+//      System.out.print(lastIndexOf ebi);
+      //expected 10
     }
 }
