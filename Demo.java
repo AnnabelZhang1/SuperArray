@@ -27,12 +27,21 @@ public class Demo{
       removeDuplicates(overlap);
       return overlap;
     }
-/*
-  public static SuperArray zip(SuperArray a, Superarray b)
-    {
 
+  public static SuperArray zip(SuperArray a, SuperArray b)
+    {
+      SuperArray zipped = new SuperArray();
+      int greatest = Math.max(a.size(), b.size());
+      for (int i = 0; i < greatest; i++)
+        {
+          if (i < a.size())
+            zipped.add(a.get(i));
+          if (i < b.size())
+            zipped.add(b.get(i));
+        }
+      return zipped;
     }
-*/
+
   public static void main(String[] args)
     {
       SuperArray words = new SuperArray();
@@ -74,5 +83,7 @@ public class Demo{
 
       System.out.println(a.equals(b));
       System.out.println(a.equals(c));
+
+      System.out.println(zip(a, b));
     }
 }
