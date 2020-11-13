@@ -62,7 +62,44 @@ class Tester{
     }
 //expected pass
 
+  SuperArray newArr = new SuperArray(5);
+  newArr.add("first");
+  newArr.add("second");
+  try
+    {
+      System.out.println(newArr.set(1, "third"));
+      System.out.println("success!");
+    }
+  catch (IndexOutOfBoundsException e)
+    {
+      System.out.println("index is out of range");
+      e.printStackTrace();
+    }
+//expected pass
 
+  try
+    {
+      newArr.remove(0);
+      System.out.println("success!");
+    }
+  catch (IndexOutOfBoundsException e)
+    {
+      System.out.println("index is out of range");
+      e.printStackTrace();
+    }
+//expected pass
+
+  try
+    {
+      newArr.remove(4);
+      System.out.println("success!");
+    }
+  catch (IndexOutOfBoundsException e)
+    {
+      System.out.println("index is out of range");
+      e.printStackTrace();
+    }
+//expected fail
 
   }
 }
