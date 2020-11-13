@@ -38,6 +38,30 @@ class Tester{
         }
 //expected fail
 
+  try
+    {
+      words.get(5);
+      System.out.println("success");
+    }
+  catch (IndexOutOfBoundsException e)
+    {
+      System.out.println(" _get_ index is out of range");
+      e.printStackTrace();
+    }
+//expected fail
+
+  try
+    {
+      words.get(2);
+      System.out.println("success");
+    }
+    catch (IndexOutOfBoundsException e)
+    {
+      System.out.println("index is out of range");
+      e.printStackTrace();
+    }
+//expected pass
+
 
 
   }
