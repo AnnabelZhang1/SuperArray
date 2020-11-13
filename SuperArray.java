@@ -27,14 +27,22 @@ public class SuperArray{
 
   public String get(int index)
     {
-      return data[index];
+      if (index < 0 || index >= size())
+        throw new IndexOutOfBoundsException("Index number " + index + " cannot be less than 0 nor greater than the array size");
+      else
+        return data[index];
     }
 
   public String set(int index, String element)
     {
-      String n = data[index];
-      data[index] = element;
-      return n;
+      if (index < 0 || index >= size())
+        throw new IndexOutOfBoundsException("Index number " + index + " is incorrect");
+      else
+        {
+          String n = data[index];
+          data[index] = element;
+          return n;
+        }
     }
 
   private void resize()
@@ -83,12 +91,19 @@ public class SuperArray{
 
   public SuperArray(int initialCapacity)
     {
-      data = new String[initialCapacity];
-      size = 0;
+      if (initialCapacity < 0)
+        throw new IllegalArgumentException("An initialCapacity of " + initialCapacity + " cannot be a negative number");
+      else
+        {
+          data = new String[initialCapacity];
+          size = 0;
+        }
     }
 
   public void add(int index, String element)
     {
+      if (index < 0 || index > size())
+        throw new IndexOutOfBoundsException("Index number " + index + " cannot be less than 0 nor greater than the array size");
       size += 1;
       String first = data[index];
       String second = "";
@@ -104,6 +119,10 @@ public class SuperArray{
 
   public String remove(int index)
     {
+      if (index < 0 || index >= size())
+        throw new IndexOutOfBoundsException("Index number "
+                                           + index
+                                           + " cannot be less than 0 nor greater than the array size");
       String item = data[index];
       String replace = data[size-1];
       String n = "";
@@ -162,5 +181,4 @@ public class SuperArray{
       else
         return false;
     }
-
 }
