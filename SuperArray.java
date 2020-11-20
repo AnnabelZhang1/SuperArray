@@ -102,19 +102,23 @@ public class SuperArray{
 
   public void add(int index, String element)
     {
-      if (index < 0 || index > size())
+      if (index < 0 || index > size)
         throw new IndexOutOfBoundsException("Index number " + index + " cannot be less than 0 nor greater than the array size");
-      size += 1;
-      String first = data[index];
-      String second = "";
-      for (int i = index + 1; i < size; i++)
+      else
         {
-          second = data[i];
-          data[i] = first;
-          first = second;
+          size += 1;
+          String[] newArr = new String[data.length + 1];
+          for (int i = 0; i < newArr.length; i++)
+            {
+              if (i < index)
+                newArr[i] = data[i];
+              else if (i > index)
+                newArr[i] = data[i - 1];
+              else
+                newArr[i] = element;
+            }
+          data = newArr;
         }
-      data[index] = element;
-      data[size] = first;
     }
 
   public String remove(int index)
